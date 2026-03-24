@@ -1,0 +1,42 @@
+export const ROADMAP_STEPS = [
+  {
+    n: 1,
+    icon: "📞",
+    title: "Contact Us",
+    desc: "Share your requirements through our contact form or schedule a free consultation call with our experts.",
+    tag: "Day 1",
+    color: "#dc2626",
+  },
+  {
+    n: 2,
+    icon: "📝",
+    title: "Custom Quote",
+    desc: "Receive a tailored proposal with transparent pricing and service details — guaranteed within 24 hours.",
+    tag: "Day 2",
+    color: "#f59e0b",
+  },
+  {
+    n: 3,
+    icon: "🤝",
+    title: "Agreement",
+    desc: "Review and sign a flexible service agreement. No hidden fees, no lock-in — your terms, your pace.",
+    tag: "Day 3",
+    color: "#8b5cf6",
+  },
+  {
+    n: 4,
+    icon: "🚀",
+    title: "Onboarding",
+    desc: "We handle the complete transition from your current vendor with dedicated support and zero disruption.",
+    tag: "Day 5–7",
+    color: "#10b981",
+  },
+  {
+    n: 5,
+    icon: "📊",
+    title: "Go Live",
+    desc: "Services activate with a dedicated account manager ensuring seamless operations from day one.",
+    tag: "Day 7+",
+    color: "#0ea5e9",
+  },
+];
