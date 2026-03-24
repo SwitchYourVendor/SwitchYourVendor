@@ -1,0 +1,62 @@
+export const TESTIMONIAL_PAIRS = [
+  {
+    front: {
+      stars: 5,
+      text: "Switching to SwitchYourVendor was the best decision for our compliance needs. Their accounting and GST services are top-notch. Saved us ₹4L annually!",
+      name: "Rajesh Kumar",
+      role: "CFO",
+      company: "TechNova Solutions",
+      avatar: "RK",
+      color: "#6366f1",
+    },
+    back: {
+      stars: 5,
+      text: "The MCA compliance team kept us perfectly audit-ready through our entire Series A. Zero penalties, zero stress — just professional execution every step of the way.",
+      name: "Sneha Iyer",
+      role: "Co-founder",
+      company: "FinStack India",
+      avatar: "SI",
+      color: "#6366f1",
+    },
+  },
+  {
+    front: {
+      stars: 5,
+      text: "The organic canteen setup transformed our workplace. Employees are healthier and more productive. The team went above and beyond our expectations.",
+      name: "Priya Sharma",
+      role: "Operations Head",
+      company: "GreenLeaf Industries",
+      avatar: "PS",
+      color: "#10b981",
+    },
+    back: {
+      stars: 5,
+      text: "Fresh fruit deliveries every Monday have become a highlight for our team. The custom seasonal baskets we send to clients are always a massive hit — great presentation!",
+      name: "Karan Mehta",
+      role: "HR Director",
+      company: "BlueWave Retail",
+      avatar: "KM",
+      color: "#10b981",
+    },
+  },
+  {
+    front: {
+      stars: 5,
+      text: "One-stop solution for all our business needs. From tax filing to office supplies, everything is managed efficiently. Highly recommended for any SME.",
+      name: "Amit Patel",
+      role: "Managing Director",
+      company: "Sunrise Exports",
+      avatar: "AP",
+      color: "#f59e0b",
+    },
+    back: {
+      stars: 5,
+      text: "Our branded apparel order of 300 pieces arrived in 6 days — stitching quality was excellent and the logo print was pixel-perfect. Will definitely reorder for our next event!",
+      name: "Divya Nair",
+      role: "Brand Manager",
+      company: "Vertex Lifestyle",
+      avatar: "DN",
+      color: "#f59e0b",
+    },
+  },
+];
