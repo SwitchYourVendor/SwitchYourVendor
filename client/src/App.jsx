@@ -1,7 +1,10 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
+// Layout
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+
+// Sections
 import HeroSection from "./components/sections/HeroSection";
 import InfiniteSlider from "./components/sections/InfiniteSlider";
 import ServicesSection from "./components/sections/ServicesSection";
@@ -9,48 +12,21 @@ import WhySwitchSection from "./components/sections/WhySwitchSection";
 import Roadmap from "./components/sections/Roadmap";
 import TestimonialsSection from "./components/sections/TestimonialsSection";
 import ContactSection from "./components/sections/ContactSection";
+
+// Chatbot
 import Chatbot from "./components/chatbot/Chatbot";
 
-import "./index.css";
-
 export default function App() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
   const whyRef = useRef(null);
   const howRef = useRef(null);
   const contactRef = useRef(null);
 
-  const scrollTo = (ref) => ref.current?.scrollIntoView({ behavior: "smooth" });
-
-  const handleSubmit = () => {
-    if (
-      !form.name ||
-      !form.email ||
-      !form.phone ||
-      !form.company ||
-      !form.service
-    ) {
-      alert("Please fill all required fields.");
-      return;
-    }
-    setSubmitted(true);
-    setForm({ name: "", email: "", phone: "", company: "", service: "", message: "" });
-  };
-
   return (
     <div
       style={{
-        fontFamily: "'Nunito', system-ui, sans-serif",
+        fontFamily: "'Nunito',system-ui,sans-serif",
         color: "#0f172a",
         background: "white",
       }}
@@ -72,60 +48,37 @@ export default function App() {
         }
       `}</style>
 
-      {/* ── NAVBAR ── */}
       <Navbar
-        onLogoClick={() => scrollTo(heroRef)}
-        onServicesClick={() => scrollTo(servicesRef)}
-        onWhyClick={() => scrollTo(whyRef)}
-        onHowClick={() => scrollTo(howRef)}
-        onGetStartedClick={() => scrollTo(contactRef)}
+        heroRef={heroRef}
+        servicesRef={servicesRef}
+        whyRef={whyRef}
+        howRef={howRef}
+        contactRef={contactRef}
       />
 
-      {/* ── HERO ── */}
-      <div ref={heroRef}>
-        <HeroSection
-          onQuoteClick={() => scrollTo(contactRef)}
-          onExploreClick={() => scrollTo(servicesRef)}
-        />
-      </div>
+      <HeroSection
+        heroRef={heroRef}
+        servicesRef={servicesRef}
+        contactRef={contactRef}
+      />
 
-      {/* ── INFINITE PARTNER SLIDER ── */}
       <InfiniteSlider />
 
-      {/* ── SERVICES (tab toggle) ── */}
       <div ref={servicesRef}>
         <ServicesSection />
       </div>
 
-      {/* ── WHY SWITCH ── */}
-      <div ref={whyRef}>
-        <WhySwitchSection />
-      </div>
+      <WhySwitchSection whyRef={whyRef} />
 
-      {/* ── HOW IT WORKS / ROADMAP ── */}
-      <div ref={howRef}>
-        <Roadmap />
-      </div>
+      <Roadmap howRef={howRef} />
 
-      {/* ── TESTIMONIALS ── */}
       <TestimonialsSection />
 
-      {/* ── CONTACT ── */}
-      <div ref={contactRef}>
-        <ContactSection
-          form={form}
-          setForm={setForm}
-          submitted={submitted}
-          setSubmitted={setSubmitted}
-          onSubmit={handleSubmit}
-        />
-      </div>
+      <ContactSection contactRef={contactRef} />
 
-      {/* ── AI CHATBOT (fixed FAB) ── */}
       <Chatbot />
 
-      {/* ── FOOTER ── */}
-      <Footer onContactClick={() => scrollTo(contactRef)} />
+      <Footer contactRef={contactRef} />
     </div>
   );
 }
